@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, fetchDataSuccess } from '../actions.index.js'
+import { isLoading, hasErrored, fetchDataSuccess } from '../actions/index.js'
 import { houseCleaner } from '../cleaner/cleaner.js'
 
 export const fetchData = (url) => {
@@ -10,7 +10,8 @@ export const fetchData = (url) => {
         throw Error (response.statusText)
       }
       dispatch(isLoading(false))
-      const data = await response.json
+      const data = await response.json()
+      console.log(data)      
       const cleanData = houseCleaner(data)
       dispatch(fetchDataSuccess(cleanData))
     } catch(error) {

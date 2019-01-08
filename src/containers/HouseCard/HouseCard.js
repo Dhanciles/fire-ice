@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const HouseCard = ({props}) => {
+export const HouseCard = (props) => {
   return (
     <div className='house-card'>
       <h1>{props.name}</h1>
@@ -15,13 +15,7 @@ export const HouseCard = ({props}) => {
 }
 
 export const mapStateToProps = (state) => ({
-  houseData: state.houseData, 
-  name: props.name, 
-  seat: props.seats, 
-  title: props.titles, 
-  coatOfArms: props.coatOfArms, 
-  ancestoralWeapons: props.ancestoralWeapons, 
-  words: props.words
+  houseData: state.houseData
 }) 
 
 export default connect(mapStateToProps)(HouseCard)

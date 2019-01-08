@@ -12,11 +12,11 @@ export class HouseCardContainer extends Component {
     this.props.fetchData(url)
   }
 
-  render() {
-    const housesToRender = this.state.houseData.map(house => (<HouseCard {...house}/>))
+  render() {   
+      const housesToRender = this.props.houseData.map(house => (<HouseCard {...house}/>))
     return (
       <main>
-        { housesToRender }
+        {housesToRender}
       </main>
     )
   }
