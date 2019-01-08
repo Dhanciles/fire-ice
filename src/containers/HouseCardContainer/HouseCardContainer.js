@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchData } from '../../thunks/fetchData.js'
+import HouseCard from '../HouseCard/HouseCard'
 
 export class HouseCardContainer extends Component {
   constructor() {
