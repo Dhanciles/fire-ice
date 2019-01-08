@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchData } from '../../thunks/fetchData.js'
 import HouseCard from '../HouseCard/HouseCard'
+import { LandingPage, LoadingComponent } from '../../components/LoadingComponent/LoadingComponent.js'
 
 export class HouseCardContainer extends Component {
   constructor() {
@@ -14,10 +15,13 @@ export class HouseCardContainer extends Component {
 
   render() {   
       const housesToRender = this.props.houseData.map(house => (<HouseCard {...house}/>))
+     const content = ( <main>
+                        {housesToRender}
+                      </main>
+                    )
+      const componentToRender = this.props.isLoading ? <LoadingComponent/> : content
     return (
-      <main>
-        {housesToRender}
-      </main>
+      componentToRender
     )
   }
 }
