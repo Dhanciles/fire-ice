@@ -8,4 +8,17 @@ describe('fetchDataSuccesReducer', () => {
 
     expect(result).toEqual(expected)
   })
+  it('should update state with houseData we want', () => {
+    const mockData = [{house: 'Stark'}]
+    const action = {
+      type: 'FETCH_DATA_SUCCESS', 
+      houseData: mockData
+    }
+
+    const expected = mockData
+
+    const result = fetchDataSuccessReducer({}, action)
+
+    expect(result).toEqual(expected)
+  })
 })
